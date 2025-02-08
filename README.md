@@ -17,7 +17,7 @@ All data processing scripts are in Python under the Jupyter Notebook,
   - Trade_Goods_BACI.ipynb has detailed notes on data from BACI and WITS. It merges trade data from BACI and tariff data from WITS to calculate tariff revenues and weighted tariffs. **Note that users need to run the above script first (TCI_Goods_BACI.ipynb) to get formatted trade data**. Outputs are saved by year under CSV files.
   - Output to IFs.ipynb takes all the output files from the three scripts above, and inserts them all into a SQLite database.
 
-## Improvements & Further Customization
+## Improvement & Customization
 1. The calculation of TCI is based on Python's Pandas DataFrame's vectorization. However, it still goes through each country-pairs as well as each year of the data (a nested-loop). If capacity allows, users can multi-process the calculation. Or if users have a better algorithm to calcualte the TCI, feel free to contribute!
 2. This script only produces TCI at IFs sectoral level. However, users can easily get TCI at any other sub-categories or customized commodity groups by modifying or creating a mapping table based on 6-digit HS code or GTAP code.
 3. When processing trade data and tariff data, the scripts currently rely on the HS92 coding system, which might lead to some mismatching situations. For example, certain commodities may have been broken down into smaller cateories throughout the years and assigned with different tariff rates. 
